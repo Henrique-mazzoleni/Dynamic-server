@@ -6,43 +6,26 @@
     <?php 
     // phpinfo();
     // echo phpversion();
-    $object = new User('Henrique', 'senha');
-    print_r($object);
-    echo "<br />"; 
-    class User
-    {
-        // public $name, $password;
-        const USER = 1;
-        const ADMIN = 2;
-        public function __construct($name, $password)
-        {
-            $this->name = $name;
-            $this->password = $password;
-            $this->permission = self::USER;
-        }
+    $familia['pai'] = 'Henrique';
+    $familia['mae'] = 'Annia';
+    $familia['filha'] = 'Gabriella';
 
-        public function save_user()
-        {
-            echo "Save User code goes here";
-        }
-    }
+    print_r($familia);
+    echo "<br>";
 
-    class Superuser extends User
+    $fam = array(
+        'pai' => 'Jose Claudio',
+        'mae' => 'Maria Helena',
+        'filho' => 'Henrique'
+    );
+    print_r($fam);
+    echo "<br>";
+
+    foreach($fam as $pos=>$membro)
     {
-        public function __construct($name, $password)
-        {
-            parent::__construct($name, $password);
-            $this->permission = self::ADMIN;
-        }
+        echo $pos . ": " . $membro . "<br>";
     }
-    $object->name = "Annia";
-    $object->password = "pass";
-    print_r($object);
-    echo "<br />";
-    $object->save_user();
-    echo "<br />";
-    $object2 = new Superuser('Gabriella', 'gagabubu');
-    print_r($object2);
+    
     ?> 
   </body>
 </html>
