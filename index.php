@@ -4,24 +4,15 @@
   </head>
   <body>
     <?php 
-    function longdate($timestamp)
+    // phpinfo();
+    if (function_exists("array_combine"))
     {
-        $temp = date("l F jS Y", $timestamp);
-        return "The date is $temp";
+        echo "Funtion Exists";
     }
-
-    function test()
+    else
     {
-        static $count = 0;
-        echo $count;
-        $count++;
+        echo "Function does not exist - better write our own";
     }
-    echo longdate(time());
-    echo "<br>";
-    test();
-    test();
-    test();
-    test();
     ?> 
   </body>
 </html>

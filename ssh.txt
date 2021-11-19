@@ -1,0 +1,22 @@
+-- check for existing keys
+> ls -a -l ~/.ssh
+
+-- generate ssh keys
+> ssh-keygen -t <entcription type> -b <number of bits> -C "<comment>"
+>> ssh-keygen -t rsa -b 4096 -C "henrique.mazzoleni@gmail.com"
+
+-- use default saving space
+> enter
+-- no passphrase needed
+> enter (2x)
+
+-- check runing process
+> eval "$(ssh-agent -s)"
+
+-- add key
+> ssh-add ~/paht/to/file
+>> ssh-add ~/.ssh/id_rsa
+
+-- extract key for github or other client
+> cat ~/path/to/file
+> cat ~/.ssh/id_rsa.pub
